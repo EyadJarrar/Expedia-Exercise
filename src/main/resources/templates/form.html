@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/form}" th:object="${requestParam}" method="post">
+    <th type="text" th:text="${errors!= null} ? ${errors.values()} : ''"/>
+    <p>Destination: <input type="text" th:field="*{destinationName}"/></p>
+    <p>Minimum Trip Start Date: <input type="date" th:field="*{minTripStartDate}"/></p>
+    <p>Maximum Trip Start Date: <input type="date" th:field="*{maxTripStartDate}"/></p>
+    <p>Length of Stay: <input type="number" th:field="*{lengthOfStay}"/></p>
+    <p>Minimum Hotel Star Rating: <input type="number" th:field="*{minStarRating}"/></p>
+    <p>Maximum Hotel Star Rating: <input type="number" th:field="*{maxStarRating}"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Result</h1>
+<tbody>
+<tr th:each="hotel: ${hotels}">
+    <td th:text="'Hotel Name: ' + ${hotel.hotelInfo.hotelName}"/>
+    <br/>
+    <img th:src="@{${hotel.hotelInfo.hotelImageUrl}}" alt="Mountain View" style="width:204px;height:155px"/>
+    <br/>
+    <!--<td th:text="'hotel star rating' +${hotel.hotelInfo.hotelStarRating}"/>-->
+    <td th:text="'Hotel City: ' + ${hotel.hotelInfo.hotelCity}"/>
+    <br/>
+    <td th:text="'Hotel Guest Reviewing Rating: ' + ${hotel.hotelInfo.hotelGuestReviewRating}"/>
+    <br/>
+    <td th:text="'Hotel Total Price Value: ' +${hotel.hotelPricingInfo.totalPriceValue}"/>
+    <br/>
+    <td th:text="'Travel Start Date: ' +${hotel.offerDateRange.travelStartDate}"/>
+    <br/>
+    <td th:text="'Travel End Date: ' + ${hotel.offerDateRange.travelEndDate}"/>
+    <br/>
+    <br/>
+    <br/>
+</tr>
+<a href="/form">Submit another message</a>
+</tbody>
+</body>
+</html>

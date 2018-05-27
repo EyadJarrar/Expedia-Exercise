@@ -20,7 +20,7 @@ public class OffersController {
     @Autowired
     private UseCaseFactory useCaseFactory;
 
-    @GetMapping("/form")
+    @GetMapping(value = {"/","/form"})
     public String greetingForm(Model model) {
         model.addAttribute("requestParam", new RequestParam());
         return "form";
